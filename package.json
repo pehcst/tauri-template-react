@@ -1,0 +1,44 @@
+{
+  "name": "tauri-react-template",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run typecheck",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.node.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:rust": "cargo fmt --manifest-path src-tauri/Cargo.toml -- --check && cargo check --locked --manifest-path src-tauri/Cargo.toml",
+    "check": "npm run lint && npm run format:check && npm run build && npm run check:rust",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.170.40",
+    "@tauri-apps/api": "^2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tanstack/router-plugin": "^1.168.41",
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^26.6.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "^10.11.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.0",
+    "vite": "^8.0.16"
+  }
+}

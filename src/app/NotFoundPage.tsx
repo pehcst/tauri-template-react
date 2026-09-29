@@ -1,12 +1,14 @@
 import { AppIcon } from "../components/ui/AppIcon";
 import { EmptyState } from "../components/ui/EmptyState";
+import { useLocale } from "../i18n/localeContext";
 
 export function NotFoundPage() {
+  const { t } = useLocale();
   return (
     <EmptyState
       icon={<AppIcon />}
-      title="Tela não encontrada"
-      description="O endereço solicitado não existe."
+      title={t("notFound.title")}
+      description={t("notFound.description")}
     />
   );
 }
